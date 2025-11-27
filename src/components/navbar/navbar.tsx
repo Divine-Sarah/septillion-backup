@@ -28,7 +28,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-12 text-white">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-12 text-white">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -41,7 +41,7 @@ export default function Navbar() {
 
             {/* Login + Get Started Box */}
           </div>
-          <div className="hidden md:flex  items-center bg-white rounded-full px-2 py-1">
+          <div className="hidden lg:flex  items-center bg-white rounded-full px-2 py-1">
             <Link href="/login">
               <button className="px-6 py-2 text-black font-medium rounded-full">
                 Login
@@ -59,7 +59,7 @@ export default function Navbar() {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
-            className="md:hidden p-4 rounded-3xl text-[#FFFFFF] bg-black/10 backdrop-blur-[30px] shadow-inner hover:bg-gray-100 transition-colors z-50"
+            className="lg:hidden p-4 rounded-3xl text-[#FFFFFF] bg-black/10 backdrop-blur-[30px] shadow-inner hover:bg-gray-100 transition-colors z-50"
           >
             {isMobileMenuOpen ? <X /> : <Menu />}
           </button>
@@ -67,17 +67,17 @@ export default function Navbar() {
           {/* Mobile Menu Overlay */}
           {isMobileMenuOpen && (
             <div
-              className="fixed inset-0 top-[72px] left-0 right-0 bottom-0 bg-opacity-50 z-40 md:hidden"
+              className="fixed inset-0 top-[72px] left-0 right-0 bottom-0 bg-opacity-50 z-40 lg:hidden"
               onClick={() => setIsMobileMenuOpen(false)}
             />
           )}
 
           <div
-            className={`fixed inset-0 z-50 transform top-[72px] right-0 transition-transform duration-300 ease-in-out md:hidden ${
+            className={`fixed inset-0 z-50 transform top-[72px] right-0 transition-transform duration-300 ease-in-out lg:hidden ${
               isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
             }`}
           >
-            <div className="flex flex-col h-[520px] pt-6 px-6 bg-[#12121A] text-white shadow-lg top-6">
+            <div className="flex flex-col h-full overflow-y-auto pt-6 px-6 bg-[#12121A] text-white shadow-lg pb-6">
               <div className="space-y-8">
                 <div className="space-y-10">
                   {navLinks.map((link) => (

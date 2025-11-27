@@ -107,8 +107,8 @@ const HeroSection = () => {
 
   return (
     <div className="bg-[#0B0B12] text-white relative  min-h-screen bg-hero1 overflow-hidden ">
-      <section className=" flex justify-center">
-        <div className=" sm:w-[796px] w-[344px] space-y-6">
+      <section className=" flex justify-center px-4">
+        <div className=" w-full max-w-[796px] space-y-6">
           <h1 className="font-kumbh font-bold text-[40px] lg:text-[64px] leading-[120%] tracking-[0] text-center">
             Money Making Magic
           </h1>
@@ -119,7 +119,7 @@ const HeroSection = () => {
           </p>
         </div>
       </section>
-      <section className="flex flex-col mt-[84px] sm:mt-[120px] items-center lg:space-y-[191px] space-y-[66px]">
+      <section className="flex flex-col mt-[84px] sm:mt-[120px] items-center lg:space-y-[120px] space-y-[66px]">
         <Button className="rounded-full bg-[#4B1FD1] flex items-center mx-auto  gap-4 py-3 btn-px hover:bg-purple-700 transition">
           <span className="font-kumbh font-semibold text-[16px] lg:text-[18px]">
             Get Started
@@ -136,8 +136,8 @@ const HeroSection = () => {
       </section>
 
       <section className=" mt-[95px] lg:mt-[180px] space-y-10 lg:mb-[190px]">
-        <div className="flex justify-center">
-          <div className=" sm:w-[864px] w-[344px] space-y-3">
+        <div className="flex justify-center px-4">
+          <div className=" w-full max-w-[864px] space-y-3">
             <h1 className="font-kumbh font-semibold text-[30px] lg:[48px] text-center">
               What do Customers Say
             </h1>
@@ -156,11 +156,11 @@ const HeroSection = () => {
             {testimonials.map((metric, index) => (
               <CarouselItem
                 key={index}
-                className="basis-full sm:basis-[350px] lg:basis-[412px] shrink-0"
+                className="basis-full md:basis-1/2 lg:basis-[412px] shrink-0"
               >
                 <Card
                   className="bg-[#12121A] border-none text-[#FFFFFF] font-kumbh rounded-[10px] 
-                          w-[412px] h-[293px] flex flex-col overflow-hidden"
+                          w-full h-[293px] flex flex-col overflow-hidden"
                 >
                   <CardContent className="flex flex-col h-full ">
                     {/* Language Tag */}
@@ -204,11 +204,11 @@ const HeroSection = () => {
             {testimonials.map((metric, index) => (
               <CarouselItem
                 key={index}
-                className="basis-full sm:basis-[350px] lg:basis-[412px] shrink-0"
+                className="basis-full md:basis-1/2 lg:basis-[412px] shrink-0"
               >
                 <Card
                   className="bg-[#12121A] border-none text-[#FFFFFF] font-kumbh rounded-[10px] 
-                          w-[412px] h-[293px] flex flex-col overflow-hidden"
+                          w-full h-[293px] flex flex-col overflow-hidden"
                 >
                   <CardContent className="flex flex-col h-full ">
                     {/* Language Tag */}

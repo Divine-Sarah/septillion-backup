@@ -9,7 +9,8 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
 
   const noLayoutRoutes = [
     "/",
-    "/get-started"
+    "/get-started",
+    "/verification"
   ];
 
   const shouldHideLayout = noLayoutRoutes.includes(pathname);

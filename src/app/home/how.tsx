@@ -33,8 +33,8 @@ const works = [
 const How = () => {
   return (
     <div className="bg-[#0B0B12] lg:py-[120px] py-10">
-      <div className=" flex justify-center items-center ">
-        <div className="space-y-6 lg:w-[864px] w-[322px] pb-[25px]">
+      <div className=" flex justify-center items-center px-4">
+        <div className="space-y-6 w-full max-w-[864px] pb-[25px]">
           <h1 className="font-kumbh font-semibold text-[24px] lg:text-[32px] leading-[120%] tracking-[0] text-center text-[#FFFFFF]">
             How Septillion Works
           </h1>
@@ -45,7 +45,7 @@ const How = () => {
           </p>
         </div>
       </div>
-      <section className="app-container sm:flex  items-center gap-[122px]">
+      <section className="app-container flex flex-col lg:flex-row items-center gap-10 lg:gap-32">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
     {works.map((work, index) => {
         const Icon = work.icons;

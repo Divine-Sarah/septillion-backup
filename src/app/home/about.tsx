@@ -52,8 +52,8 @@ const About = () => {
 
   return (
     <div className="bg-[#5759C7] py-10 lg:py-[60px]">
-      <div className="sm:flex sm:justify-center ">
-        <div className="space-y-6 lg:w-[864px] sm:w-[440px] ">
+      <div className="sm:flex sm:justify-center px-4">
+        <div className="space-y-6 w-full max-w-[864px] ">
           <h1 className="font-kumbh font-semibold text-[24px] lg:text-[32px] leading-[120%] tracking-[0] text-center text-[#FFFFFF]">
             What is Septillion About?
           </h1>
@@ -111,7 +111,7 @@ const About = () => {
         ) : (
           // Desktop Tabs
           <Tabs value={activeTab} onValueChange={setActiveTab}>
-            <TabsList className="bg-[#12121A] rounded-full p-2 flex flex-wrap justify-center gap-3 lg:w-[864px] sm:w-auto h-auto">
+            <TabsList className="bg-[#12121A] rounded-full p-2 flex flex-wrap justify-center gap-3 w-full max-w-[864px] h-auto">
               {Languages.map((lang) => {
                 const value = lang.language.toLowerCase();
                 return (

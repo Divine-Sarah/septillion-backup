@@ -6,8 +6,8 @@ const teamCount = 8;
 const Investors = () => {
   return (
     <section className="bg-[#0B0B12] lg:py-[120px] py-10">
-      <div className=" flex justify-center items-center ">
-        <div className="space-y-6 lg:w-[864px] w-[396px] pb-[25px]">
+      <div className=" flex justify-center items-center px-4">
+        <div className="space-y-6 w-full max-w-[864px] pb-[25px]">
           <h1 className="font-kumbh font-semibold text-[30px] lg:text-[48px] leading-[120%] tracking-[0] text-center text-[#FFFFFF]">
             Trusted by Investors Like You
           </h1>
@@ -18,7 +18,7 @@ const Investors = () => {
         </div>
       </div>
       <div>
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 sm:px-[172px] px-12 gap-6 lg:gap-[68px]">
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 px-4 sm:px-12 lg:px-20 gap-6 lg:gap-[68px]">
           {Array.from({ length: teamCount }).map((_, i) => (
             <Image
               key={i}

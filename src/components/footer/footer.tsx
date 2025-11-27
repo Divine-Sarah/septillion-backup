@@ -9,7 +9,7 @@ const footer = () => {
     
     <div className=' bg-[#0B0B12] app-container pt-16'>
         <section className=" bg-[#4C53D2] rounded-[30px] ">
-  <div className=" lg:px-52 lg:pt-[84px] px-5 py-10 lg:pb-[52px] text-white">
+  <div className=" lg:px-20 xl:px-52 lg:pt-[84px] px-5 py-10 lg:pb-[52px] text-white">
     <div className='flex flex-col md:flex-row items-center justify-center  md:space-x-6 space-y-4 md:space-y-0'>
     <div className="flex items-center gap-2 text-[#AAB8C2] font-medium text-sm md:font-semibold md:text-lg">
       {/* <img src="/apple-icon.png" className="h-4" /> */}
@@ -34,7 +34,7 @@ const footer = () => {
     Investing doesn’t have to be scary. We make it clear and beginner approved.
   </p>
 
-<div className='md:flex items-center md:px-[158px] px-[73px] justify-center md:space-x-6 space-y-4 md:space-y-0'>
+<div className='flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 px-5 md:px-0'>
 
 <div className='bg-[#0B0B12] py-2.5 md:px-[30px] px-5 rounded-[10px] flex  gap-6'>
       <Image src="./google.svg" alt='' width={24} height={24}/>
@@ -93,13 +93,13 @@ const footer = () => {
 
         <footer className=" text-gray-300 mt-20 py-14">
     {/* <!-- About --> */}
-    <div className='flex  sm:flex-row flex-col sm:items-center sm:gap-[171px] gap-10 justify-between'>
+    <div className='flex flex-col xl:flex-row xl:items-start gap-10 justify-between'>
       <p className=" sm:w-[426px] font-normal text-sm sm:text-[18px]  font-kumbh text-[#FFFFFF]">
             Septillion is a financial data and analytics platform built to represent, visualize,
             and democratize access to Nigerian and African stock markets.
     </p>
 
-  <div className=" grid grid-cols-2 md:grid-cols-3 gap-10">
+  <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 w-full xl:w-auto">
     {/* <!-- Platform --> */}
     <div className='font-kumbh font-normal text-[#AAB8C2] space-y-4'>
       <h3 className='font-semibold text-[16px] sm:text-lg text-[#FFFFFF]'>Platform</h3>

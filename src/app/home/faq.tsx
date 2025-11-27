@@ -47,8 +47,8 @@ const Faq = () => {
   return (
     <section className="bg-[#0B0B12] lg:py-[120px] py-10">
        <div className="app-container  ">
-        <div className='flex justify-center items-center'>
-        <div className="space-y-6 lg:w-[864px] w-[384px] pb-[25px]">
+        <div className='flex justify-center items-center px-4'>
+        <div className="space-y-6 w-full max-w-[864px] pb-[25px]">
           <h1 className="font-kumbh font-semibold text-[30px] lg:text-[48px] leading-[120%] tracking-[0] text-center text-[#FFFFFF]">
             Frequently Asked Questions
           </h1>
