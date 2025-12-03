@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import React from "react";
+import React, { useRef } from "react";
 import { ArrowUpRight, ArrowDown } from "lucide-react";
 import {
   Carousel,
@@ -9,9 +9,8 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
-// import Image from "next/image";
+import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
-import { useRef } from "react";
 
 const HeroSection = () => {
   // Left → Right (default direction)
@@ -106,39 +105,55 @@ const HeroSection = () => {
   ];
 
   return (
-    <div className="bg-[#0B0B12] text-white relative  min-h-screen bg-hero1 overflow-hidden ">
-      <section className=" flex justify-center px-4">
-        <div className=" w-full max-w-[796px] space-y-6">
-          <h1 className="font-kumbh font-bold text-[40px] lg:text-[64px] leading-[120%] tracking-[0] text-center">
-            Money Making Magic
-          </h1>
-          <p className="font-kumbh font-medium text-[16px] sm:text-[24px] leading-[100%] text-[#AAB8C2] text-center">
-            Your money should work as hard as you do. That’s why Septillion
-            gives you the tools to invest smarter, track market movements, and
-            watch your money grow steadily over time.
-          </p>
-        </div>
-      </section>
-      <section className="flex flex-col mt-[84px] sm:mt-[120px] items-center lg:space-y-[120px] space-y-[66px]">
-        <Button className="rounded-full bg-[#4B1FD1] flex items-center mx-auto  gap-4 py-3 btn-px hover:bg-purple-700 transition">
-          <span className="font-kumbh font-semibold text-[16px] lg:text-[18px]">
-            Get Started
-          </span>
-          <ArrowUpRight className="rounded-full bg-white text-[#4B1FD1] lg:w-10 lg:h-10" />
-        </Button>
+    <div className="bg-[#0B0B12] text-white relative min-h-screen overflow-hidden flex flex-col items-center">
+      {/* Background Image - Positioned absolutely */}
+      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
+        <Image
+          src="/heroImg.svg"
+          alt="Background Glow"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+      </div>
 
-        <div className="flex gap-6 items-center">
-          <span className="font-kumbh font-semibold text-[16px] lg:text-[18px]">
-            Scroll to explore
-          </span>
-          <ArrowDown />
-        </div>
-      </section>
+      {/* Main Content - Z-index to sit on top */}
+      <div className="relative z-10 w-full flex flex-col items-center pt-[118px]">
+        <section className="flex justify-center px-4 w-full">
+          <div className="w-full max-w-[796px] space-y-6 text-center">
+            <h1 className="font-kumbh font-bold text-[40px] lg:text-[64px] leading-[120%] tracking-[0]">
+              Money Making Magic
+            </h1>
+            <p className="font-kumbh font-medium text-[16px] sm:text-[24px] leading-[140%] text-[#AAB8C2]">
+              Your money should work as hard as you do. That’s why Septillion
+              gives you the tools to invest smarter, track market movements, and
+              watch your money grow steadily over time.
+            </p>
+          </div>
+        </section>
 
-      <section className=" mt-[95px] lg:mt-[180px] space-y-10 lg:mb-[190px]">
+        <section className="flex flex-col mt-[60px] sm:mt-[80px] items-center space-y-[60px] sm:space-y-[80px]">
+          <Button className="rounded-full bg-[#4B1FD1] flex items-center gap-4 py-6 px-8 hover:bg-purple-700 transition shadow-[0_0_30px_rgba(75,31,209,0.5)]">
+            <span className="font-kumbh font-semibold text-[16px] lg:text-[18px]">
+              Get Started
+            </span>
+            <ArrowUpRight className="rounded-full bg-white text-[#4B1FD1] p-1 w-8 h-8" />
+          </Button>
+
+          <div className="flex gap-3 items-center animate-bounce">
+            <span className="font-kumbh font-medium text-[14px] lg:text-[16px] text-[#AAB8C2]">
+              Scroll to explore
+            </span>
+            <ArrowDown className="text-[#AAB8C2] w-4 h-4" />
+          </div>
+        </section>
+      </div>
+
+      {/* Testimonials Section */}
+      <section className="relative z-10 mt-[120px] lg:mt-[180px] space-y-10 lg:mb-[190px] w-full">
         <div className="flex justify-center px-4">
-          <div className=" w-full max-w-[864px] space-y-3">
-            <h1 className="font-kumbh font-semibold text-[30px] lg:[48px] text-center">
+          <div className="w-full max-w-[864px] space-y-3">
+            <h1 className="font-kumbh font-semibold text-[30px] lg:text-[48px] text-center">
               What do Customers Say
             </h1>
             <p className="font-kumbh font-medium text-[16px] sm:text-[24px] leading-[120%] tracking-[0] text-[#AAB8C2] text-center">
@@ -148,8 +163,8 @@ const HeroSection = () => {
           </div>
         </div>
         <Carousel
-         opts={{ loop: true, align: "start" }}
-        plugins={[autoplayLeft.current]}
+          opts={{ loop: true, align: "start" }}
+          plugins={[autoplayLeft.current]}
           className="w-full"
         >
           <CarouselContent className="flex items-start gap-6">
@@ -173,7 +188,7 @@ const HeroSection = () => {
                       {metric.message}
                     </p>
 
-                    <div className="flex justify-between">
+                    <div className="flex justify-between mt-auto">
                       {/* Name + Location - always at the bottom */}
                       <div className="flex flex-col text-[16px] font-normal">
                         <p className="">{metric.name}</p>
@@ -181,9 +196,6 @@ const HeroSection = () => {
                           {metric.age}.{metric.location}
                         </p>
                       </div>
-                      {/* <img src="/public/Avatar.svg" alt="" />
-                       */}
-                       {/* <Image src="/Avatar.svg" alt=""/> */}
                     </div>
                   </CardContent>
                 </Card>
@@ -192,12 +204,12 @@ const HeroSection = () => {
           </CarouselContent>
         </Carousel>
         <Carousel
-         opts={{
-          loop: true,
-          align: "start",
-          direction: "rtl",  // This is the correct way!
-        }}
-        plugins={[autoplayRight.current]}
+          opts={{
+            loop: true,
+            align: "start",
+            direction: "rtl",
+          }}
+          plugins={[autoplayRight.current]}
           className="w-full"
         >
           <CarouselContent className="flex items-start gap-6">
@@ -221,7 +233,7 @@ const HeroSection = () => {
                       {metric.message}
                     </p>
 
-                    <div className="flex justify-between">
+                    <div className="flex justify-between mt-auto">
                       {/* Name + Location - always at the bottom */}
                       <div className="flex flex-col text-[16px] font-normal">
                         <p className="">{metric.name}</p>
@@ -229,7 +241,6 @@ const HeroSection = () => {
                           {metric.age}.{metric.location}
                         </p>
                       </div>
-                      {/* <img src="" alt="" /> */}
                     </div>
                   </CardContent>
                 </Card>

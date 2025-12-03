@@ -45,8 +45,8 @@ const How = () => {
           </p>
         </div>
       </div>
-      <section className="app-container flex flex-col lg:flex-row items-center gap-10 lg:gap-32">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <section className="app-container flex flex-col md:flex-col-reverse lg:flex-row items-center gap-10 md:gap-12 lg:gap-32">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-5xl mx-auto w-full lg:w-auto">
     {works.map((work, index) => {
         const Icon = work.icons;
         return(
@@ -54,7 +54,7 @@ const How = () => {
         key={index}
         className="bg-[#2F2B86] py-6 px-4 rounded-[10px] flex flex-col items-start space-y-[15px] 
                    hover:bg-[#3a35a0] transition-all duration-300 
-                   border border-purple-900/50"
+                   border border-purple-900/50 h-full"
       >
         {/* Icon */}
      {/* Icon with cool background */}
@@ -76,7 +76,15 @@ const How = () => {
     )}
   </div>
  
-    <Image src="./how.svg" alt="" width={591} height={701} />
+    <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+      <Image 
+        src="./how.svg" 
+        alt="How Septillion Works" 
+        width={591} 
+        height={701} 
+        className="w-full max-w-[500px] lg:max-w-none h-auto object-contain"
+      />
+    </div>
       </section>
     </div>
   );
