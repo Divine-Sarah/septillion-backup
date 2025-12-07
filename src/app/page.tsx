@@ -1,15 +1,9 @@
 "use client"
 
-import Welcome from './pages/welcome';
-
-
-
+import Welcome from './welcome';
 
 export default function Home() {
-
   return (
-    
-<Welcome />
-
+    <Welcome />
   );
 }
